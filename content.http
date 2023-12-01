@@ -1,0 +1,54 @@
+### Find All Content
+GET http://localhost:8081/api/content
+
+### Find Content By ID
+GET http://localhost:8081/api/content/1
+
+### Create new Content
+POST http://localhost:8081/api/content
+Content-Type: application/json
+
+  {
+    "id": 2,
+    "title": "My Second Blog Post",
+    "description": "My second blog post",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2023-12-01T14:42:45.7562894",
+    "dateUpdated": null,
+    "url": ""
+  }
+
+### Create invadlid new Content
+POST http://localhost:8081/api/content
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "",
+  "description": "My second blog post",
+  "status": "",
+  "contentType": "ARTICLE",
+  "dateCreated": "2023-12-01T14:42:45.7562894",
+  "dateUpdated": null,
+  "url": ""
+}
+
+
+### Update existing Content
+PUT http://localhost:8081/api/content/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "My Updated Blog Post",
+  "description": "My updated blog post",
+  "status": "PUBLISHED",
+  "contentType": "VIDEO",
+  "dateCreated": "2023-12-01T14:42:45.7562894",
+  "dateUpdated": "2023-12-01T14:42:45.7562894",
+  "url": "http://localhost:8081/my-updated-blog-post"
+}
+
+### Delete existing Content
+DELETE http://localhost:8081/api/content/2
